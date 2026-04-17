@@ -68,9 +68,14 @@ export default function Navbar({ cart }) {
           className="navbar-brand lbv-navbar-brand d-flex align-items-center gap-2 gap-md-3"
           to="/"
         >
-          <span className="lbv-navbar-mark" aria-hidden="true">
-            <span className="lbv-navbar-mark__inner">SB</span>
-          </span>
+          <img
+            className="lbv-navbar-logo"
+            src="/img/navbar-brand.png"
+            alt=""
+            width={557}
+            height={561}
+            decoding="async"
+          />
           <span className="lbv-navbar-title">
             <span className="lbv-navbar-name">Smash</span>
             <span className="lbv-navbar-tag">Burgers</span>

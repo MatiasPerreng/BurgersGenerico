@@ -446,14 +446,12 @@ export default function PedidoPage() {
         }}
       />
       <main className="container-fluid pedido-page__main py-4 py-lg-5">
-        <div className="row mb-4">
-          <div className="col-12 col-xl-10">
-            <h1 className="display-5 display-font lbv-page-title mb-2">Tu pedido</h1>
-            <p className="lbv-page-subtitle mb-0">
-              Elegí del menú y abrí el carrito para revisar el pedido y completar tus datos.
-            </p>
-          </div>
-        </div>
+        <header className="pedido-page__intro mb-4 mb-lg-5">
+          <h1 className="pedido-page__title display-font">Tu pedido</h1>
+          <p className="pedido-page__subtitle mb-0">
+            Elegí del menú y abrí el carrito para revisar el pedido y completar tus datos.
+          </p>
+        </header>
 
         {pedidoOk && (
           <div className="lbv-pedido-ok-card mb-4" role="status">
@@ -584,6 +582,7 @@ export default function PedidoPage() {
                   Sumá cantidades en cada producto. El carrito se abre con el botón flotante.
                 </p>
               </div>
+              <div className="pedido-panel__body">
               {categoriasOrdenadas.map((categoria) => {
                 const lista = agrupados[categoria];
                 return (
@@ -598,7 +597,7 @@ export default function PedidoPage() {
                       return (
                       <article
                         key={p.id_producto}
-                        className={`pedido-catalog-card producto-card rounded-4${p.categoria === "combos" ? " producto-card--combo pedido-catalog-card--combo" : ""}${p.categoria === "hamburguesa" ? " producto-card--hamburguesa pedido-catalog-card--burger" : ""}`}
+                        className={`pedido-catalog-card producto-card${p.categoria === "combos" ? " producto-card--combo pedido-catalog-card--combo" : ""}${p.categoria === "hamburguesa" ? " producto-card--hamburguesa pedido-catalog-card--burger" : ""}`}
                       >
                         <div className="pedido-catalog-card__media">
                           {mostrarImg ? (
@@ -670,6 +669,7 @@ export default function PedidoPage() {
                 </section>
                 );
               })}
+              </div>
             </section>
             </div>
 

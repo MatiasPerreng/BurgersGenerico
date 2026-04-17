@@ -1,11 +1,35 @@
-/* Plus Jakarta Sans + Source Sans 3 (index.html) */
+/* Plus Jakarta Sans + Source Sans 3 + Outfit (index.html) */
 .pedido-page {
-  background: var(--lbv-cream);
+  background:
+    radial-gradient(ellipse 100% 80% at 50% -20%, rgba(0, 0, 0, 0.04) 0%, transparent 55%),
+    linear-gradient(180deg, #ececee 0%, var(--lbv-cream) 35%, #f0f0f2 100%);
   min-height: 100vh;
   font-family: "Plus Jakarta Sans", "Source Sans 3", "DM Sans", system-ui, sans-serif;
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.pedido-page__intro {
+  max-width: min(52rem, 100%);
+}
+
+.pedido-page__title {
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0a0a0a;
+  margin: 0 0 0.5rem;
+  line-height: 1.1;
+}
+
+.pedido-page__subtitle {
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #52525b;
+  line-height: 1.5;
+  max-width: 40rem;
 }
 
 .pedido-page .lbv-page-title {
@@ -20,22 +44,23 @@
 }
 
 .pedido-page .lbv-badge-total {
-  background: var(--lbv-white);
-  color: var(--lbv-orange-dark);
-  border: 1px solid var(--lbv-orange);
+  background: #ffffff;
+  color: #0a0a0a;
+  border: 1px solid rgba(0, 0, 0, 0.12);
   font-weight: 700;
   padding: 0.45rem 0.9rem;
   font-size: 0.875rem;
   letter-spacing: 0.02em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* Contenido del pedido: más ancho que el .container estándar de Bootstrap */
+/* Contenido del pedido: ancho generoso (catálogo tipo “dashboard”) */
 .pedido-page__main {
-  max-width: min(96rem, 100%);
+  max-width: min(118rem, 100%);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1rem, 3vw, 2.25rem);
-  padding-right: clamp(1rem, 3vw, 2.25rem);
+  padding-left: clamp(1rem, 3.5vw, 3rem);
+  padding-right: clamp(1rem, 3.5vw, 3rem);
 }
 
 /* ——— Menú principal + carrito en panel lateral ——— */
@@ -43,47 +68,79 @@
   display: flex;
   flex-direction: column;
   gap: clamp(1.75rem, 4vw, 2.35rem);
-  max-width: min(92rem, 100%);
+  max-width: min(114rem, 100%);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(0.35rem, 1.2vw, 0.75rem);
-  padding-right: clamp(0.35rem, 1.2vw, 0.75rem);
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: max(5rem, env(safe-area-inset-bottom));
 }
 
 .pedido-panel {
-  background: var(--lbv-white);
-  border: 1px solid var(--lbv-cream-dark);
-  border-radius: 1.05rem;
-  box-shadow: 0 2px 18px rgba(43, 24, 16, 0.06);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 1.35rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 24px 48px -12px rgba(0, 0, 0, 0.1),
+    0 12px 24px -8px rgba(0, 0, 0, 0.06);
 }
 
 .pedido-panel--catalog {
-  padding: 1.25rem clamp(1rem, 2.5vw, 1.85rem) 1.5rem;
-  border-top: 3px solid var(--lbv-orange);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
 }
 
 .pedido-panel__head {
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(43, 24, 16, 0.08);
+  margin: 0;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2.75rem);
+  background: linear-gradient(165deg, #0a0a0a 0%, #171717 48%, #0f0f0f 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  position: relative;
+}
+
+.pedido-panel__head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12) 30%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.12) 70%,
+    transparent
+  );
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .pedido-panel__title {
-  font-family: "Plus Jakarta Sans", "Source Sans 3", "DM Sans", sans-serif;
-  font-size: 1.1rem;
+  font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
   font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--lbv-ink);
-  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: #fafafa;
+  margin: 0 0 0.4rem;
+  line-height: 1.2;
 }
 
 .pedido-panel__lead {
-  font-size: 0.9rem;
-  color: var(--lbv-ink-muted);
-  line-height: 1.45;
+  font-size: clamp(0.88rem, 1.3vw, 0.95rem);
+  color: rgba(228, 228, 231, 0.82);
+  line-height: 1.5;
   font-weight: 500;
+  max-width: 42rem;
+}
+
+.pedido-panel__body {
+  padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1rem, 2.5vw, 2.5rem) clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
 .pedido-cart-empty {
@@ -104,7 +161,7 @@
   align-items: flex-start;
   gap: 0.75rem 1rem;
   padding: 0.55rem 0;
-  border-bottom: 1px dashed rgba(43, 24, 16, 0.12);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
 }
 
 .pedido-cart-line:last-child {
@@ -137,7 +194,7 @@
   font-weight: 800;
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
-  color: var(--lbv-orange-dark);
+  color: #0a0a0a;
   flex-shrink: 0;
 }
 
@@ -149,7 +206,7 @@
   gap: 0.5rem 1rem;
   margin-top: 0.65rem;
   padding-top: 0.9rem;
-  border-top: 2px solid rgba(0, 180, 180, 0.22);
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
 }
 
 .pedido-cart-footer__meta {
@@ -166,7 +223,7 @@
 .pedido-cart-footer__total strong {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--lbv-orange-dark);
+  color: #0a0a0a;
   font-variant-numeric: tabular-nums;
 }
 
@@ -223,19 +280,19 @@
   gap: 0.75rem;
   padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.75rem
     max(1rem, env(safe-area-inset-left));
-  border-bottom: 1px solid rgba(43, 24, 16, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
-  background: linear-gradient(180deg, #fffefb 0%, #fffaf6 100%);
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
 }
 
 .pedido-drawer__title {
-  font-family: "Source Sans 3", "DM Sans", sans-serif;
-  font-size: 1.05rem;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.08rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-transform: none;
   margin: 0 0 0.2rem;
-  color: var(--lbv-ink);
+  color: #0a0a0a;
 }
 
 .pedido-drawer__sub {
@@ -302,121 +359,174 @@
 }
 
 .pedido-page .lbv-catalog-section {
-  margin-bottom: clamp(1.35rem, 3vw, 1.85rem);
+  margin-bottom: clamp(1.65rem, 3.5vw, 2.35rem);
+}
+
+.pedido-page .lbv-catalog-section:last-child {
+  margin-bottom: 0;
 }
 
 .pedido-page .lbv-catalog-section__title {
-  font-family: "Plus Jakarta Sans", "Source Sans 3", sans-serif;
-  font-size: 0.72rem;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--lbv-ink-muted);
-  margin-bottom: 0.85rem;
-  padding-bottom: 0.55rem;
-  border-bottom: 1px solid rgba(43, 24, 16, 0.1);
+  color: #52525b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pedido-page .lbv-catalog-section__title::before {
+  content: "";
+  width: 2.25rem;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0a0a0a, #52525b);
+  flex-shrink: 0;
 }
 
 .pedido-page .lbv-catalog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14.5rem), 1fr));
-  gap: clamp(1rem, 2vw, 1.35rem);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16.5rem), 1fr));
+  gap: clamp(1.1rem, 2.2vw, 1.5rem);
 }
 
-/* Móvil: una card por fila (sin scroll horizontal), ancho completo del contenedor */
+/* Móvil: una card por fila */
 @media (max-width: 767px) {
   .pedido-page .lbv-catalog-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
+    gap: 1.05rem;
   }
 }
 
 @media (min-width: 900px) {
   .pedido-page .lbv-catalog-grid {
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    gap: 1.25rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .pedido-page .lbv-catalog-grid {
     grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
-    gap: 1.4rem;
+    gap: 1.35rem;
   }
 }
 
-/* Nombre producto: sans nítido, sin forzar mayúsculas tipo flyer */
+@media (min-width: 1200px) {
+  .pedido-page .lbv-catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+    gap: 1.45rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .pedido-page .lbv-catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(19.5rem, 1fr));
+    gap: 1.55rem;
+  }
+}
+
+/* Nombre producto */
 .pedido-page .lbv-product-name {
   font-family: "Plus Jakarta Sans", "Source Sans 3", sans-serif !important;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   text-transform: none !important;
-  color: var(--lbv-ink);
+  color: #0a0a0a;
 }
 
 .pedido-page .lbv-product-desc {
-  color: var(--lbv-ink-muted);
+  color: #71717a;
   font-size: 0.875rem;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .pedido-page .lbv-price {
-  color: var(--lbv-orange-dark);
-  font-size: 1rem;
-  font-weight: 700;
+  color: #0a0a0a;
+  font-size: 1.05rem;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 .pedido-page .producto-card {
-  background: var(--lbv-white);
-  border: 1px solid var(--lbv-cream-dark);
-  box-shadow: 0 2px 14px rgba(43, 24, 16, 0.07);
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 10px 28px -6px rgba(0, 0, 0, 0.08),
+    0 4px 12px -4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
   min-height: 0;
   transition:
-    border-color 0.18s ease,
-    box-shadow 0.18s ease;
+    transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1),
+    border-color 0.2s ease,
+    box-shadow 0.22s ease;
+}
+
+.pedido-page .producto-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0a0a0a 0%, #3f3f46 50%, #0a0a0a 100%);
+  opacity: 0.92;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 1.25rem 1.25rem 0 0;
 }
 
 .pedido-page .pedido-catalog-card:hover {
-  border-color: rgba(233, 78, 36, 0.28);
-  box-shadow: 0 6px 22px rgba(43, 24, 16, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 22px 44px -8px rgba(0, 0, 0, 0.14),
+    0 12px 24px -6px rgba(0, 0, 0, 0.08);
 }
 
 .pedido-page .producto-card--combo {
-  border-color: rgba(0, 180, 180, 0.32);
-  background: linear-gradient(165deg, var(--lbv-white) 0%, rgba(0, 180, 180, 0.05) 100%);
+  border-color: rgba(0, 0, 0, 0.09);
+  background: linear-gradient(168deg, #ffffff 0%, #f4f4f5 55%, #f0fdfa 100%);
+}
+
+.pedido-page .producto-card--combo::before {
+  background: linear-gradient(90deg, #0f766e 0%, #14b8a6 50%, #0f766e 100%);
 }
 
 .pedido-page .producto-card--combo.pedido-catalog-card:hover {
-  border-color: rgba(0, 180, 180, 0.45);
+  border-color: rgba(13, 148, 136, 0.35);
 }
 
 .pedido-page .producto-card--hamburguesa {
-  border-color: rgba(233, 78, 36, 0.22);
-  background: linear-gradient(
-    165deg,
-    var(--lbv-white) 0%,
-    rgba(233, 78, 36, 0.04) 100%
-  );
+  border-color: rgba(0, 0, 0, 0.08);
+  background: linear-gradient(168deg, #ffffff 0%, #fafafa 50%, #fff7ed 100%);
+}
+
+.pedido-page .producto-card--hamburguesa::before {
+  background: linear-gradient(90deg, #9a3412 0%, #ea580c 50%, #9a3412 100%);
 }
 
 .pedido-page .pedido-catalog-card__media {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(155deg, #1c1612 0%, #0e0b09 100%);
+  background: linear-gradient(155deg, #18181b 0%, #0a0a0a 100%);
   overflow: hidden;
+  border-radius: 0;
 }
 
 .pedido-page .pedido-catalog-card__media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(18, 14, 12, 0.42) 0%, transparent 52%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -429,11 +539,11 @@
 }
 
 .pedido-page .pedido-catalog-card--combo .pedido-catalog-card__media::after {
-  background: linear-gradient(to top, rgba(0, 90, 90, 0.22) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(15, 118, 110, 0.35) 0%, transparent 58%);
 }
 
 .pedido-page .pedido-catalog-card--burger .pedido-catalog-card__media::after {
-  background: linear-gradient(to top, rgba(90, 40, 20, 0.28) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(154, 52, 18, 0.32) 0%, transparent 58%);
 }
 
 .pedido-page .pedido-catalog-card__placeholder {
@@ -443,13 +553,13 @@
   width: 100%;
   height: 100%;
   min-height: 7.25rem;
-  background: linear-gradient(145deg, var(--lbv-cream) 0%, var(--lbv-cream-dark) 100%);
+  background: linear-gradient(145deg, #e4e4e7 0%, #d4d4d8 100%);
   font-size: 2rem;
   line-height: 1;
 }
 
 .pedido-page .pedido-catalog-card--combo .pedido-catalog-card__placeholder {
-  background: linear-gradient(145deg, rgba(0, 180, 180, 0.12) 0%, var(--lbv-cream) 100%);
+  background: linear-gradient(145deg, rgba(20, 184, 166, 0.2) 0%, #e7e5e4 100%);
 }
 
 .pedido-page .pedido-catalog-card__body {
@@ -457,8 +567,8 @@
   flex-direction: column;
   flex: 1;
   min-width: 0;
-  padding: 0.9rem 1rem 1rem;
-  gap: 0.4rem;
+  padding: 1rem 1.1rem 1.1rem;
+  gap: 0.45rem;
 }
 
 .pedido-page .pedido-catalog-card__title {
@@ -487,13 +597,13 @@
 
 .pedido-page .pedido-catalog-card__footer {
   margin-top: auto;
-  padding-top: 0.65rem;
+  padding-top: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem 0.65rem;
-  border-top: 1px solid rgba(43, 24, 16, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .pedido-page .pedido-catalog-card__qty {
@@ -520,20 +630,21 @@
 .pedido-page .lbv-price--combo {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.95rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, var(--lbv-cyan), var(--lbv-cyan-dark));
-  color: var(--lbv-cream) !important;
+  padding: 0.38rem 0.95rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(145deg, #0d9488 0%, #0f766e 100%);
+  color: #fafafa !important;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 2px 10px rgba(0, 144, 144, 0.28);
+  letter-spacing: -0.02em;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
 }
 
 .pedido-page .pedido-catalog-card .lbv-price--combo {
-  padding: 0.28rem 0.68rem;
-  font-size: 0.9rem;
-  border-radius: 0.4rem;
+  padding: 0.32rem 0.75rem;
+  font-size: 0.92rem;
+  border-radius: 0.5rem;
 }
 
 .pedido-page .pedido-catalog-card__footer .lbv-price:not(.lbv-price--combo) {

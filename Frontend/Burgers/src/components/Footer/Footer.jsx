@@ -7,43 +7,45 @@ export default function Footer() {
     <footer className="lbv-footer">
       <div className="lbv-footer__ambient" aria-hidden="true" />
       <div className="lbv-footer-wave" aria-hidden="true" />
-      <div className="container lbv-footer__content py-5 text-center position-relative">
-        <div className="lbv-footer__brand-block mx-auto mb-4">
-          <p className="lbv-footer-brand font-bubble mb-0">Smash Burgers</p>
-          <span className="lbv-footer__brand-line" aria-hidden="true" />
+      <div className="container lbv-footer__inner py-5 position-relative">
+        <div className="row g-4 text-center text-md-start">
+          <div className="col-md-4">
+            <p className="lbv-footer__brand font-bubble mb-2">Smash Burgers</p>
+            <p className="lbv-footer__plain small mb-0">{businessInfo.slogan}</p>
+          </div>
+          <div className="col-md-4">
+            <p className="lbv-footer__plain small mb-1">{businessInfo.locationLabel}</p>
+            <p className="lbv-footer__plain small mb-1">{businessInfo.postalLine}</p>
+            <p className="lbv-footer__plain small mb-1">{businessInfo.servicesLine}</p>
+            <p className="lbv-footer__plain small mb-0">
+              <a href={businessInfo.phoneHref}>{businessInfo.phoneDisplay}</a>
+            </p>
+          </div>
+          <div className="col-md-4">
+            <p className="lbv-footer__plain small mb-1">{businessInfo.coverage}</p>
+            <p className="lbv-footer__plain small mb-0">
+              <a href={businessInfo.instagramUrl} target="_blank" rel="noopener noreferrer">
+                Instagram {businessInfo.instagramHandle}
+              </a>
+            </p>
+          </div>
         </div>
-        <p className="lbv-footer-slogan mb-3" aria-label={businessInfo.slogan}>
-          <span className="lbv-footer-slogan-pill">{businessInfo.slogan.toUpperCase()}</span>
-        </p>
-        <p className="lbv-footer-text small mb-1">{businessInfo.locationLabel}</p>
-        <p className="lbv-footer-text small mb-2">{businessInfo.postalLine}</p>
-        <p className="lbv-footer-text small mb-2">{businessInfo.servicesLine}</p>
-        <p className="lbv-footer-text small mb-2">
-          <a className="lbv-footer-link" href={businessInfo.phoneHref}>
-            {businessInfo.phoneDisplay}
-          </a>
-        </p>
-        <p className="lbv-footer-coverage small mb-3">{businessInfo.coverage}</p>
-        <p className="lbv-footer-text small mb-0">
-          <a
-            className="lbv-footer-link lbv-footer-insta"
-            href={businessInfo.instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram {businessInfo.instagramHandle}
-          </a>
-        </p>
-        <div className="lbv-footer-staff mt-4 mb-0">
-          <Link to="/admin" className="lbv-footer-staff-link">
-            Administración
-          </Link>
-          <span className="lbv-footer-staff-dot" aria-hidden="true">
-            ·
-          </span>
-          <Link to="/repartidor" className="lbv-footer-staff-link">
-            Repartidor
-          </Link>
+        <div className="row g-3 align-items-center mt-4 pt-4 lbv-footer__bottom">
+          <div className="col-12 col-md-6 text-center text-md-start small">
+            <Link to="/admin" className="lbv-footer__plain-link">
+              Administración
+            </Link>
+            <span className="lbv-footer__sep mx-2" aria-hidden="true">
+              ·
+            </span>
+            <Link to="/repartidor" className="lbv-footer__plain-link">
+              Repartidor
+            </Link>
+          </div>
+          <div className="col-12 col-md-6 text-center text-md-end small lbv-footer__credit">
+            <span className="lbv-footer__credit-developed">DEVELOPED BY</span>{" "}
+            <span className="lbv-footer__credit-brand">INFOCORE SOLUTIONS</span>
+          </div>
         </div>
       </div>
     </footer>
