@@ -1,0 +1,10 @@
+{
+  "name": "proyecto-burgers",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Frontend/Burgers run dev",
+    "dev:api": "npm --prefix Backend run dev",
+    "build": "npm --prefix Frontend/Burgers run build",
+    "preview": "npm --prefix Frontend/Burgers run preview"
+  }
+}

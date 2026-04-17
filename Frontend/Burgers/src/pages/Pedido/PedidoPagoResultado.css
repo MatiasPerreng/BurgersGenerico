@@ -1,0 +1,8 @@
+.pedido-mp-result {
+  max-width: 36rem;
+}
+
+.pedido-mp-result__title {
+  font-family: "Archivo Black", "Arial Black", sans-serif;
+  letter-spacing: 0.02em;
+}

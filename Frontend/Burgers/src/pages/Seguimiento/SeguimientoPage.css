@@ -1,0 +1,124 @@
+.seguimiento-page {
+  background: var(--lbv-cream);
+  min-height: 100vh;
+}
+
+.seguimiento-page .seg-title {
+  color: var(--lbv-ink);
+}
+
+.seguimiento-page .seg-subtitle {
+  color: var(--lbv-ink-muted);
+  max-width: 36rem;
+}
+
+.seguimiento-page .seg-form {
+  background: var(--lbv-white);
+  border: 2px solid var(--lbv-cream-dark) !important;
+  border-radius: 1rem;
+  max-width: 32rem;
+}
+
+.seguimiento-page .seg-input {
+  border: 2px solid var(--lbv-cream-dark);
+  border-radius: 0.75rem;
+}
+
+.seguimiento-page .seg-btn {
+  background: var(--lbv-orange);
+  color: var(--lbv-cream);
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+}
+
+.seguimiento-page .seg-btn:hover {
+  background: var(--lbv-orange-dark);
+  color: var(--lbv-white);
+}
+
+.seguimiento-page .seg-alert {
+  max-width: 32rem;
+}
+
+.seguimiento-page .seg-result {
+  background: var(--lbv-white);
+  border: 2px solid var(--lbv-cream-dark) !important;
+  border-radius: 1rem;
+  max-width: 36rem;
+}
+
+.seguimiento-page .seg-total {
+  font-size: 1.1rem;
+  color: var(--lbv-ink);
+}
+
+.seguimiento-page .seg-desc {
+  color: var(--lbv-ink-muted);
+}
+
+.seguimiento-page .seg-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Tonos por estado: `src/styles/pedidoEstadoColores.css` (compartido con /admin) */
+
+.seguimiento-page .seg-pago-line {
+  color: var(--lbv-ink-muted);
+}
+
+.seguimiento-page .seg-results-stack {
+  max-width: 40rem;
+}
+
+.seguimiento-page .seg-results-heading {
+  color: var(--lbv-ink);
+}
+
+.seguimiento-page .seg-link-muted {
+  color: var(--lbv-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.seguimiento-page .seg-link-muted:hover {
+  color: var(--lbv-orange-dark);
+}
+
+.seguimiento-page .seg-btn--outline {
+  background: transparent;
+  color: var(--lbv-orange-dark);
+  border: 2px solid var(--lbv-orange);
+}
+
+.seguimiento-page .seg-btn--outline:hover {
+  background: var(--lbv-orange);
+  color: var(--lbv-cream);
+  border-color: var(--lbv-orange);
+}
+
+.seguimiento-page .seg-mp-asociar {
+  border-radius: 0.75rem;
+}
+
+.seguimiento-page .seg-mp-asociar .seg-input {
+  max-width: 16rem;
+}
+
+.seguimiento-page .seg-mp-comprobante {
+  display: inline-flex;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.seguimiento-page .seg-mp-pendiente {
+  background: rgba(255, 193, 7, 0.2);
+  border: 1px solid rgba(180, 130, 0, 0.35);
+  color: var(--lbv-ink-muted);
+  line-height: 1.4;
+}

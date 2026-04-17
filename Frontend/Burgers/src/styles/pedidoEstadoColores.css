@@ -1,0 +1,158 @@
+/**
+ * Tonos por estado de pedido — mismos criterios en /admin y /seguimiento:
+ * MP pendiente: azul · Recibido: naranja · Preparación: ámbar · Listo: verde
+ * En la calle: teal · Entregado: verde oscuro · Cancelado: rojo
+ */
+
+.estado-pedido-tone--pendiente_confirmacion_mp {
+  background: rgba(2, 136, 209, 0.14);
+  color: #01579b;
+  border: 1px solid rgba(2, 136, 209, 0.38);
+}
+
+.estado-pedido-tone--pendiente {
+  background: rgba(230, 81, 0, 0.14);
+  color: #bf360c;
+  border: 1px solid rgba(230, 81, 0, 0.38);
+}
+
+.estado-pedido-tone--en_preparacion {
+  background: rgba(251, 192, 45, 0.32);
+  color: #6d4c00;
+  border: 1px solid rgba(245, 124, 0, 0.45);
+}
+
+.estado-pedido-tone--listo {
+  background: rgba(46, 125, 50, 0.2);
+  color: #1b5e20;
+  border: 1px solid rgba(46, 125, 50, 0.42);
+}
+
+.estado-pedido-tone--en_camino {
+  background: rgba(0, 131, 143, 0.16);
+  color: #006064;
+  border: 1px solid rgba(0, 131, 143, 0.4);
+}
+
+.estado-pedido-tone--entregado {
+  background: rgba(27, 94, 32, 0.16);
+  color: #1b3d1f;
+  border: 1px solid rgba(27, 94, 32, 0.38);
+}
+
+.estado-pedido-tone--cancelado {
+  background: rgba(198, 40, 40, 0.12);
+  color: #b71c1c;
+  border: 1px solid rgba(198, 40, 40, 0.32);
+}
+
+.estado-pedido-tone--otro {
+  background: rgba(43, 24, 16, 0.08);
+  color: var(--lbv-ink);
+  border: 1px solid rgba(43, 24, 16, 0.14);
+}
+
+/* ——— Filtros por estado (panel admin): borde acento + activo con color del estado ——— */
+
+.admin-main .admin-filtro-estado {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: transparent;
+}
+
+.admin-main .admin-filtro-estado--todos:not(.active) {
+  border-left-color: rgba(43, 24, 16, 0.22);
+}
+
+.admin-main .admin-filtro-estado--pendiente_confirmacion_mp:not(.active) {
+  border-left-color: #0288d1;
+}
+
+.admin-main .admin-filtro-estado--pendiente:not(.active) {
+  border-left-color: #e65100;
+}
+
+.admin-main .admin-filtro-estado--en_preparacion:not(.active) {
+  border-left-color: #f9a825;
+}
+
+.admin-main .admin-filtro-estado--listo:not(.active) {
+  border-left-color: #2e7d32;
+}
+
+.admin-main .admin-filtro-estado--en_camino:not(.active) {
+  border-left-color: #00838f;
+}
+
+.admin-main .admin-filtro-estado--entregado:not(.active) {
+  border-left-color: #1b5e20;
+}
+
+.admin-main .admin-filtro-estado--cancelado:not(.active) {
+  border-left-color: #c62828;
+}
+
+/* Activo: “Todos” sigue naranja marca; el resto usa el color del estado */
+.admin-main .admin-filtro-estado.admin-filtro-estado--pendiente_confirmacion_mp.active {
+  background: #0277bd !important;
+  color: #fff !important;
+  border-color: #01579b !important;
+  border-left-color: #01579b !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--pendiente.active {
+  background: #e65100 !important;
+  color: #fff !important;
+  border-color: #bf360c !important;
+  border-left-color: #bf360c !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--en_preparacion.active {
+  background: #f9a825 !important;
+  color: #3e2723 !important;
+  border-color: #f57f17 !important;
+  border-left-color: #f57f17 !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--listo.active {
+  background: #2e7d32 !important;
+  color: #fff !important;
+  border-color: #1b5e20 !important;
+  border-left-color: #1b5e20 !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--en_camino.active {
+  background: #00838f !important;
+  color: #fff !important;
+  border-color: #006064 !important;
+  border-left-color: #006064 !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--entregado.active {
+  background: #1b5e20 !important;
+  color: #fff !important;
+  border-color: #0d3d10 !important;
+  border-left-color: #0d3d10 !important;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--cancelado.active {
+  background: #c62828 !important;
+  color: #fff !important;
+  border-color: #8e0000 !important;
+  border-left-color: #8e0000 !important;
+}
+
+.admin-main .admin-filtro-estado.active .admin-filtro-estado-n {
+  background: rgba(255, 255, 255, 0.28);
+  color: inherit;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--en_preparacion.active .admin-filtro-estado-n {
+  background: rgba(62, 39, 35, 0.15);
+  color: #3e2723;
+}
+
+.admin-main .admin-filtro-estado.admin-filtro-estado--todos.active .admin-filtro-estado-n {
+  background: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}

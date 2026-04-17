@@ -1,0 +1,52 @@
+:root {
+  /* Tema demo monocromo — smash / street food */
+  --lbv-orange: #0a0a0a;
+  --lbv-orange-dark: #000000;
+  --lbv-orange-soft: #262626;
+  --lbv-cyan: #737373;
+  --lbv-cyan-dark: #525252;
+  --lbv-cyan-soft: #a3a3a3;
+  --lbv-cyan-glow: rgba(255, 255, 255, 0.12);
+  --lbv-cream: #f5f5f5;
+  --lbv-cream-dark: #e5e5e5;
+  --lbv-ink: #0a0a0a;
+  --lbv-ink-muted: #525252;
+  --lbv-white: #fafafa;
+  --lbv-shadow: rgba(0, 0, 0, 0.12);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--lbv-cream);
+  color: var(--lbv-ink);
+  font-family: "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.display-font {
+  font-family: "Archivo Black", "Arial Black", sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.font-bubble {
+  font-family: "Bowlby One", "Archivo Black", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+a {
+  color: var(--lbv-ink);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--lbv-cyan-dark);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.18);
+}

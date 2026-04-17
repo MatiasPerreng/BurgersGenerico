@@ -1,0 +1,17 @@
+# Cursor / IDE
+.cursor/
+
+# Entorno y secretos
+.env
+**/.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Frontend build
+Frontend/Burgers/dist/
+Frontend/Burgers/node_modules/

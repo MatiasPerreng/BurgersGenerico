@@ -1,0 +1,22 @@
+from pydantic import BaseModel, Field
+
+
+class LoginIn(BaseModel):
+    usuario: str = Field(..., min_length=1, max_length=64)
+    password: str = Field(..., min_length=1, max_length=128)
+
+
+class TokenOut(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    role: str
+    nombre: str
+
+
+class RepartidorListOut(BaseModel):
+    id: int
+    nombre: str
+    usuario: str
+
+    class Config:
+        from_attributes = True

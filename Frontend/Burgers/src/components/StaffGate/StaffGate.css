@@ -1,0 +1,62 @@
+.staff-gate-page {
+  min-height: 70vh;
+  min-height: 70dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(1.25rem, env(safe-area-inset-top, 0px)) max(1rem, env(safe-area-inset-right, 0px))
+    max(1.25rem, env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left, 0px));
+  background: var(--lbv-cream);
+}
+
+.staff-gate-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  background: var(--lbv-white);
+  border: 2px solid var(--lbv-cream-dark);
+}
+
+@media (max-width: 400px) {
+  .staff-gate-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 1rem;
+  }
+
+  .staff-gate-title {
+    font-size: 1.2rem;
+  }
+
+  .staff-gate-btn {
+    min-height: 46px;
+  }
+}
+
+.staff-gate-title {
+  font-size: 1.35rem;
+  color: var(--lbv-ink);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.staff-gate-input {
+  border-radius: 0.75rem !important;
+  border: 2px solid var(--lbv-cream-dark) !important;
+}
+
+.staff-gate-btn {
+  background: var(--lbv-orange);
+  color: var(--lbv-cream) !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  border: none;
+  padding: 0.65rem 1rem;
+}
+
+.staff-gate-btn:hover {
+  background: var(--lbv-orange-soft);
+  color: var(--lbv-white) !important;
+}
